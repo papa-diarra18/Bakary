@@ -7,6 +7,9 @@
             <li class="nav-item">
                 <a class="nav-link <?php echo $index ? 'active' : "" ?>" aria-current="page" href="/">Acceuil</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link <?php echo $produit ? 'active' : "" ?>" aria-current="page" href="/views/auth/produit.php">Produits</a>
+            </li>
             <?php if (!isset($_SESSION['user_id'])): ?>
                 <li class="nav-item">
                     <a class="nav-link <?= $login ? 'active' : "" ?>" href="/views/auth/login.php">Connexion</a>
