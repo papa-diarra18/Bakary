@@ -6,7 +6,7 @@ include "../../header.php";
 include "../../navbar.php";
 
 $errorMessage = $_SESSION['error'] ?? null;
-unset($_SESSION['error']); //supprimer le message d'erreur
+unset($_SESSION['error']);
 ?>
 
 <main>

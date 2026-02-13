@@ -1,10 +1,11 @@
 <?php
 session_start();
-$NProduit = true;
+$produit = true;
 
 include "../../header.php";
 include "../../navbar.php";
 
+$produits = [];
 $errorMessage = $_SESSION['error'] ?? null;
 unset($_SESSION['error']);
 ?>
@@ -27,21 +28,13 @@ unset($_SESSION['error']);
                 <input type="number" class="form-control" id="prix" placeholder="Votre prix" name="prix" max="20000000" min="1">
             </div>
             <div class="mb-3">
-                <label for="qte" class="form-label">Quantité</label>
-                <select name="qte" id="qte" class="form-control">
-                    <?php for ($i = 5; $i <= 100; $i++): ?>
-                        <option value="<?= $i ?>"><?= $i ?></option>
-                    <?php endfor ?>
-                </select>
+                <label for="quantite" class="form-label">Quantité</label>
+                <input type="number" class="form-control" id="quantite" placeholder="Quantité" name="quantite" max="100" min="5">
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" id="description" placeholder="Description du produit" name="description"></textarea>
-                <?php if (isset($_SESSION['error_description'])): ?>
-                    <small id="descriptionHelp" class="form-text text-danger">
-                        <?= $_SESSION['error_description'] ?>
-                    </small>
-                <?php endif ?>
+                
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Enregistrer</button>
